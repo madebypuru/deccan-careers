@@ -79,7 +79,8 @@
         you: { ...seat, o: 1, b: .4 }, glow: [240, 1], bg: [60, 0, 0, .32] },
     ];
 
-    const COPY = [
+    // a page can supply its own five beats (number, title, line) via window.HIRING_COPY
+    const COPY = window.HIRING_COPY || [
       ["01", "Exceptional People", "Share your resume, portfolio, and a brief note about your interest in joining us."],
       ["02", "Introductory Call", "A 20 to 30 minute call to discuss your background and career goals while learning more about us."],
       ["03", "Technical / Role Assessment", "Complete a task or share past work to showcase your skills and problem-solving abilities."],
@@ -611,7 +612,8 @@
     }
     function fit() {
       const w = wrap.clientWidth + 2;
-      scale = Math.max(w / W, .44);
+      // a page can keep the stage larger than its column (data-min-scale); the camera then follows the action
+      scale = Math.max(w / W, +wrap.dataset.minScale || .44);
       gsap.set(stage, { scale });
       wrap.style.height = H * scale + "px";
       camera(cur, false);

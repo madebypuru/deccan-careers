@@ -307,7 +307,8 @@
 
   const quality = $(".quality");
   if (quality) {
-    const STEPS = [
+    // a page can supply its own four points (number, title, line) via window.QUALITY_STEPS
+    const STEPS = window.QUALITY_STEPS || [
       ["01", "Accuracy", "Every data point is labeled with care and expertise."],
       ["02", "Consistency", "Uniform standards, no matter who annotates."],
       ["03", "Usability", "Data is ready for your ML models—no extra cleanup."],
