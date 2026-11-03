@@ -166,43 +166,22 @@
   const cal = $(".cal");
   if (cal) {
     const board = $(".cal__board", cal), track = $(".cal__track", cal);
-    const SWATCH = ["#fff1a8", "#dcecff", "#e2f3dd", "#fde3e1", "#efe6ff"];  // sticky-note paper
-    const TOPS = [100, 168, 112, 226, 96, 190, 128, 214, 104];
+    // Deccan's palette only: white paper, ink, one blue. Each note is the study's name and topic, nothing more.
+    const SWATCH = [["#fff", "#111113"], ["#111113", "#f6f3f0"], ["#fff", "#111113"], ["#086ae3", "#fff"]];
+    const TOPS = [108, 204, 132, 236, 104, 216, 144, 240, 116];
     const short = e => e.title.split(":")[0].replace(/^Introducing (the )?/, "");
     const cols = ENTRIES.map((e, i) => {
-      const { y, m } = ym(e.date), bg = SWATCH[i % SWATCH.length];
+      const { y, m } = ym(e.date), [bg, fg] = SWATCH[i % SWATCH.length];
       return `<div class="cal__col"><div class="cal__ch"><b>${MON[m]}</b><span>${y}</span></div>
-        <a class="ev" href="${e.href}" target="_blank" rel="noopener" draggable="false" style="--bg:${bg};top:${TOPS[i % TOPS.length]}px">
-          <span class="ev__t">${short(e)}${e.board ? '<span class="ev__b">Board</span>' : ""}</span>
-          <span class="ev__d">${fmt(e.date)} · ${e.tag}</span>
-          <span class="ev__x">${e.desc}</span>
-          <span class="ev__a">Read ${arrow}</span>
+        <a class="ev" href="${e.href}" target="_blank" rel="noopener" draggable="false" style="--bg:${bg};--fg:${fg};top:${TOPS[i % TOPS.length]}px">
+          <span class="ev__t">${short(e)}</span>
+          <span class="ev__d">${e.tag}</span>
         </a></div>`;
     });
-    const RING = '<svg class="cal__ring" viewBox="0 0 118 58"><path pathLength="1" d="M70 6C38 2 6 12 5 30c-1 18 30 25 58 23 30-2 52-12 50-27C111 11 86 4 54 7"/></svg>';
-    cols.push(`<div class="cal__col cal__col--today"><div class="cal__ch"><b>Today</b><span>Oct 23, 2026</span>${RING}</div></div>`);
+    const now = new Date();
+    cols.push(`<div class="cal__col cal__col--today"><div class="cal__ch"><b>Today</b><span>${MON[now.getMonth()]} ${now.getFullYear()}</span></div></div>`);
     track.innerHTML = cols.join("");
     const evs = $$(".ev", track);
-
-    // handwritten margin notes: [column, x, y, text, arrow path (from the text toward its note), arrow box]
-    // arrows are drawn from the words to the note, in the words' own coordinates (0,0 = top-left of the text)
-    const HAND = [
-      [0, 44, 380, "where it all started", "M58 -6 C 56 -28, 66 -48, 84 -66 M84 -66 l-9 3 M84 -66 l-1 9"],
-      [3, 92, 128, "constraints > models", "M44 30 C 34 46, 32 64, 40 80 M40 80 l-8 -5 M40 80 l3 -9"],
-      [6, 46, 400, "our first leaderboard!", "M44 -6 C 46 -24, 56 -40, 70 -56 M70 -56 l-9 2 M70 -56 l0 9"],
-      [7, 30, 112, "6 models, no clear winner", "M118 30 C 120 52, 112 70, 100 86 M100 86 l1 -9 M100 86 l8 -4"],
-      [8, 50, 404, "now in 9 languages", "M40 -6 C 42 -26, 50 -44, 62 -60 M62 -60 l-9 2 M62 -60 l0 9"],
-    ];
-    const hands = HAND.map(([c, x, y, text, d]) => {
-      const el = document.createElement("span");
-      el.className = "cal__hand";
-      el.style.left = `calc(${c} * var(--colw) + ${x}px)`; el.style.top = y + "px";
-      el.innerHTML = `<svg style="left:0;top:0" width="1" height="1"><path pathLength="1" d="${d}"/></svg>${text}`;
-      track.append(el);
-      return el;
-    });
-    const setColW = () => track.style.setProperty("--colw", $(".cal__col", track).offsetWidth + "px");
-    setColW();
 
     const pos = { x: 0 };
     let minX = 0;
@@ -260,7 +239,7 @@
     const colW = () => $(".cal__col", track).offsetWidth;
     $(".cal__prev", cal).addEventListener("click", () => settle(Math.round((pos.x + colW()) / colW()) * colW(), 1));
     $(".cal__next", cal).addEventListener("click", () => settle(Math.round((pos.x - colW()) / colW()) * colW(), 1));
-    addEventListener("resize", () => { setColW(); bounds(); settle(pos.x, 0); });
+    addEventListener("resize", () => { bounds(); settle(pos.x, 0); });
 
     if (!REDUCED) {
       evs.forEach((n, i) => gsap.set(n, { rotation: TILT[i % TILT.length] }));
@@ -269,9 +248,6 @@
         if (!e.isIntersecting) return;
         io.disconnect();
         gsap.to(evs, { opacity: 1, y: 0, duration: .6, ease: "back.out(1.6)", stagger: .07, delay: .1 });
-        // ink: arrows and the Today circle draw themselves in, then the words fade up
-        gsap.fromTo($$(".cal__hand path, .cal__ring path", track), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .9, ease: "power2.inOut", stagger: .12, delay: .7 });
-        gsap.fromTo(hands, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: .5, ease: "power2.out", stagger: .12, delay: .9 });
       }, { threshold: .3 }).observe(board);
     }
   }

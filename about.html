@@ -7,11 +7,13 @@
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:opsz,wght@9..40,400&family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400&family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <link rel="preload" href="fonts/SeasonMix-TRIAL-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css?v=1792695731">
-<link rel="stylesheet" href="about.css?v=1792695731">
-<link rel="stylesheet" href="timeline.css?v=15">
+<link rel="stylesheet" href="about.css?v=1793714670">
+<link rel="stylesheet" href="timeline.css?v=1793712364">
+<link rel="stylesheet" href="quality-flow.css?v=1793714938">
+<link rel="stylesheet" href="about-hero.css?v=1793714744">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -30,33 +32,15 @@
 </header>
 
 <main>
-  <section class="ab-hero">
-    <div class="ab-hero__glow" aria-hidden="true"><img src="img/glow-bg-blur.webp" alt=""></div>
-    <div class="ab-hero__top">
-      <div class="ab-hero__copy">
-        <h1 data-reveal="words">Humans x AI = Magic</h1>
-        <p class="ab-hero__sub disp" data-reveal>Helping/Empowering AI understand human judgement</p>
-      </div>
+  <!-- Hero · floating polaroids (after Profound) -->
+  <section class="hx hp3" aria-label="About Deccan AI">
+    <div class="hp3__glow" aria-hidden="true"><img src="img/glow-bg-blur.webp" alt=""></div>
+    <div class="hp3__stage" aria-hidden="true"></div>
+    <div class="hp3__copy">
+      <p class="eyebrow" data-reveal>// About Deccan AI</p>
+      <h1 data-reveal="words">Humans x AI = <em>Magic</em></h1>
+      <p class="hp3__sub disp" data-reveal>Helping AI understand human judgement</p>
       <a class="btn" href="index.html#roles" data-reveal>Join our team <img class="bend" src="img/arrow-bend-2.svg" alt=""></a>
-    </div>
-    <div class="ab-hero__media">
-      <div class="frame" data-slot="0"></div>
-      <div class="deck" data-reveal>
-        <figure class="card"><span class="card__glow" aria-hidden="true"><img src="img/hero-team-bg-blur.webp" alt=""></span><span class="card__pic"><img src="img/about/hero-1.webp" alt="Deccan AI speaking at the Middle East Banking AI &amp; Analytics Summit"></span></figure>
-        <figure class="card"><span class="card__glow" aria-hidden="true"><img src="img/hero-team-bg-blur.webp" alt=""></span><span class="card__pic"><img src="img/about/hero-2.webp" alt="A Deccan AI teammate at a conference booth"></span></figure>
-        <figure class="card"><span class="card__glow" aria-hidden="true"><img src="img/hero-team-bg-blur.webp" alt=""></span><span class="card__pic"><img src="img/about/hero-3.webp" alt="The Deccan AI booth at an industry event"></span></figure>
-        <figure class="card"><span class="card__glow" aria-hidden="true"><img src="img/hero-team-bg-blur.webp" alt=""></span><span class="card__pic"><img src="img/office-3.png" alt="The Deccan AI office floor"></span></figure>
-      </div>
-      <div class="ab-hero__side">
-        <div class="ctrls" data-carousel="hero" data-reveal>
-          <div class="pill dots" role="tablist" aria-label="Photos"></div>
-          <button class="pill play" aria-label="Pause photo rotation" aria-pressed="false"><img src="img/icon-a.svg" alt=""></button>
-        </div>
-        <div class="strip">
-          <div class="strip__item" data-slot="1"></div>
-          <div class="strip__item" data-slot="2"></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -78,47 +62,10 @@
     </div>
   </section>
 
-  <section class="research light">
-    <div class="research__head">
-      <div>
-        <p class="eyebrow" data-reveal>// Research <span class="opt-tag">Option 1 · Photos</span></p>
-        <h2 class="ttl" data-reveal="words">Independent benchmarks that test the limits of frontier models</h2>
-      </div>
-      <div class="ctrls ctrls--light" data-carousel="tl" data-reveal>
-        <div class="pill dots" role="tablist" aria-label="Timeline"></div>
-        <button class="pill play" aria-label="Pause timeline" aria-pressed="false"><img src="img/about/play-dark.svg" alt=""></button>
-      </div>
-    </div>
-    <div class="tl">
-      <div class="tl__track"></div>
-    </div>
-  </section>
-
-  <!-- Option 2 · pinned research index -->
-  <section class="rix light" aria-label="Research index">
-    <div class="rix__head">
-      <div>
-        <p class="eyebrow" data-reveal>// Research <span class="opt-tag">Option 2 · Index</span></p>
-        <h2 class="ttl" data-reveal="words">Independent benchmarks that test the limits of frontier models</h2>
-      </div>
-      <div class="rix__nav" data-reveal><span class="rix__count"></span><a class="rs-link" href="https://www.deccan.ai/research" target="_blank" rel="noopener">All research <svg viewBox="0 0 12 12" fill="none"><path d="M3 9 9 3M4 3h5v5" stroke="currentColor" stroke-width="1.3"/></svg></a></div>
-    </div>
-    <div class="rix__body">
-      <div class="rix__line" aria-hidden="true"></div>
-      <div class="rix__index"><span class="rix__prog" aria-hidden="true"><i></i></span><div class="rix__list" role="list"></div></div>
-      <div class="rix__detail"><div class="rix__card" aria-live="polite">
-        <div class="rix__when"><span class="rix__year" aria-hidden="true"></span><span class="rix__mon"></span></div>
-        <div class="rix__below"><h3 class="rix__title"></h3><p class="rix__desc"></p><div class="rix__meta"></div></div>
-      </div></div>
-    </div>
-    <div class="rix-m"></div>
-  </section>
-
-  <!-- Option 3 · calendar board with sticky notes -->
   <section class="cal light" aria-label="Research calendar">
     <div class="cal__head">
       <div>
-        <p class="eyebrow" data-reveal>// Research <span class="opt-tag">Option 3 · Calendar</span></p>
+        <p class="eyebrow" data-reveal>// Research</p>
         <h2 class="ttl" data-reveal="words">Independent benchmarks that test the limits of frontier models</h2>
       </div>
       <div class="cal__nav" data-reveal>
@@ -130,49 +77,56 @@
     <div class="cal__board"><div class="cal__track"></div></div>
   </section>
 
-  <section class="approach light">
-    <div class="approach__in">
-      <div class="approach__l">
-        <p class="eyebrow" data-reveal>// Quality as Infrastructure</p>
-        <h2 class="ttl" data-reveal="words">The Deccan Approach</h2>
-        <p class="approach__lede" data-reveal>We built Deccan AI with quality as the core system, not a patch.</p>
-        <div class="kpi" data-reveal>
-          <div class="kpi__n"><span data-count="2" data-suffix="x">2x</span></div>
-          <p class="kpi__l">kpi here</p>
-          <p class="kpi__q">Some line by Rukesh or any other leader that can be added.</p>
-          <div class="kpi__who"><img src="img/about/avatar-rukesh.jpg" alt=""><span><b>Rukesh</b><small>Founder</small></span></div>
+  <section class="qf" aria-label="The Deccan approach to quality">
+    <div class="qf__glow" aria-hidden="true"><img src="img/glow-bg-blur.webp" alt=""></div>
+    <div class="qf__in">
+      <header class="qf__head">
+        <div>
+          <p class="eyebrow" data-reveal>// Quality as infrastructure</p>
+          <h2 data-reveal="words">The Deccan Approach</h2>
+        </div>
+        <p class="qf__lede" data-reveal>We built Deccan AI with quality as the core system, not a patch.</p>
+      </header>
+      <div class="qf__body">
+        <div class="qf-card glass" data-reveal>
+          <p class="qf-card__lbl">What quality really means</p>
+          <button type="button" class="qf-out"><span class="qf-out__t">Accuracy<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></span><span class="qf-out__d"><span>Every data point is labeled with care and expertise.</span></span></button>
+          <button type="button" class="qf-out"><span class="qf-out__t">Consistency<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></span><span class="qf-out__d"><span>Uniform standards, no matter who annotates.</span></span></button>
+          <button type="button" class="qf-out"><span class="qf-out__t">Usability<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></span><span class="qf-out__d"><span>Data is ready for your ML models, with no extra cleanup.</span></span></button>
+          <button type="button" class="qf-out"><span class="qf-out__t">Reliability<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></span><span class="qf-out__d"><span>You get exactly what you expect, every time.</span></span></button>
+        </div>
+        <div class="qf__rows">
+        <div class="qf-row">
+          <img class="qf-ic" src="img/about/ic-platforms.svg" alt="">
+          <h3>Platforms</h3>
+          <div class="qf-row__d"><p>Custom-built infra to track, score, &amp; elevate label quality</p><p>Transparent metrics, so teams see what we see</p></div>
+        </div>
+        <div class="qf-row">
+          <img class="qf-ic" src="img/about/ic-people.svg" alt="">
+          <h3>People</h3>
+          <div class="qf-row__d"><p>Trained annotators, expert reviewers, and domain specialists</p><p>Human judgment where it matters most</p></div>
+        </div>
+        <div class="qf-row">
+          <img class="qf-ic" src="img/about/ic-processes.svg" alt="">
+          <h3>Processes</h3>
+          <div class="qf-row__d"><p>Tight QA loops, gold-data calibration, and multi-layer review</p><p>Real-time feedback to prevent drift</p></div>
+        </div>
+        <div class="qf-end">
+          <div>
+            <h3>Data that's built to perform by design</h3>
+            <p>At the end of the pipeline, you don't just get data.</p>
+          </div>
+          <span class="qf-pill">Quality</span>
         </div>
       </div>
-      <div class="approach__r">
-        <div class="pillar" data-reveal><img src="img/about/ic-platforms.svg" alt=""><div><h3>Platforms</h3><ul><li>Custom-built infra to track, score, &amp; elevate label quality</li><li>Transparent metrics—so teams see what we see</li></ul></div></div>
-        <div class="pillar" data-reveal><img src="img/about/ic-people.svg" alt=""><div><h3>People</h3><ul><li>Trained annotators, expert reviewers, and domain specialists</li><li>Human judgment where it matters most</li></ul></div></div>
-        <div class="pillar" data-reveal><img src="img/about/ic-processes.svg" alt=""><div><h3>Processes</h3><ul><li>Tight QA loops, gold-data calibration, and multi-layer review</li><li>Real-time feedback to prevent drift</li></ul></div></div>
       </div>
     </div>
   </section>
 
-  <section class="quality" aria-label="What quality really means at Deccan AI">
-    <div class="quality__bg" aria-hidden="true"><div><img src="img/about/q-bg.webp" alt=""></div></div>
-    <div class="quality__head">
-      <p class="eyebrow">// the outcome</p>
-      <h2>What Quality Really<br>means at DeccanAI</h2>
-      <p class="quality__intro disp">At the end of the pipeline, you don't just get data. You get data that's built to perform by design.</p>
-    </div>
-    <div class="q-dial" aria-hidden="true"></div>
-    <div class="q-copy" aria-live="polite"><h3>Accuracy</h3><p>Every data point is labeled with care and expertise.</p></div>
-    <img class="q-ring" src="img/about/q-ring.webp" alt="" aria-hidden="true">
-    <div class="q-orb" aria-hidden="true">
-      <div class="q-orb__spin"><img src="img/about/q-light.webp" alt=""></div>
-      <div class="q-orb__sheen"></div>
-      <div class="q-orb__glint"></div>
-      <img class="q-orb__edge" src="img/about/q-ring-edge.svg" alt="">
-    </div>
-    <div class="quality__fade" aria-hidden="true"><img src="img/about/q-fade.webp" alt=""></div>
-  </section>
-
-  <section class="lead" aria-label="Our team">
+  <section class="lead lead--auto" aria-label="Our team">
     <div class="lead__glow" aria-hidden="true"><div><img src="img/glow-bg-blur.webp" alt=""></div></div>
     <div class="lead__head">
+      <span class="opt-tag">Option 1 · Scrolling rows</span>
       <p class="eyebrow" data-reveal>// Driven by Passion</p>
       <h2 data-reveal="words">Our Team</h2>
       <p class="disp" data-reveal>Our leadership team brings deep industry expertise and a shared vision to advance responsible AI. Together, they guide Deccan AI in delivering pristine, human-curated data with quality and trust at its core.</p>
@@ -181,21 +135,45 @@
       <div class="region__meta">
         <h3 data-reveal="words">USA Team</h3>
         <div class="ctrls" data-carousel="usa" data-reveal>
-          <div class="pill dots" role="tablist" aria-label="USA team"></div>
+          <span class="pill count"></span>
           <button class="pill play" aria-label="Pause rotation" aria-pressed="false"><img src="img/icon-a.svg" alt=""></button>
         </div>
       </div>
-      <div class="people" data-reveal></div>
+      <div class="crew" data-reveal></div>
     </div>
     <div class="region" data-region="india">
       <div class="region__meta">
         <h3 data-reveal="words">India</h3>
         <div class="ctrls" data-carousel="india" data-reveal>
-          <div class="pill dots" role="tablist" aria-label="India team"></div>
+          <span class="pill count"></span>
           <button class="pill play" aria-label="Pause rotation" aria-pressed="false"><img src="img/icon-a.svg" alt=""></button>
         </div>
       </div>
-      <div class="people" data-reveal></div>
+      <div class="crew" data-reveal></div>
+    </div>
+  </section>
+
+  <section class="lead lead--tabs tm" id="team-switch" aria-label="Our team by country">
+    <div class="lead__glow" aria-hidden="true"><div><img src="img/glow-bg-blur.webp" alt=""></div></div>
+    <div class="tm__top">
+      <div class="lead__head">
+        <span class="opt-tag">Option 2 · Country switch</span>
+        <p class="eyebrow" data-reveal>// Driven by Passion</p>
+        <h2 data-reveal="words">Our Team</h2>
+        <p class="disp" data-reveal>Our leadership team brings deep industry expertise and a shared vision to advance responsible AI. Together, they guide Deccan AI in delivering pristine, human-curated data with quality and trust at its core.</p>
+      </div>
+      <div class="tm__ctrl" data-reveal>
+        <div class="tm__switch" role="tablist" aria-label="Choose a country">
+          <span class="tm__thumb" aria-hidden="true"></span>
+          <button class="tm__tab" role="tab" id="tm-tab-usa" data-team="usa" aria-selected="true" aria-controls="tm-usa">USA <small></small></button>
+          <button class="tm__tab" role="tab" id="tm-tab-india" data-team="india" aria-selected="false" aria-controls="tm-india" tabindex="-1">India <small></small></button>
+        </div>
+        <button class="play" aria-label="Pause rotation" aria-pressed="false"></button>
+      </div>
+    </div>
+    <div class="tm__panels" data-reveal>
+      <div class="tm__panel is-on" role="tabpanel" id="tm-usa" data-team="usa" aria-labelledby="tm-tab-usa"></div>
+      <div class="tm__panel" role="tabpanel" id="tm-india" data-team="india" aria-labelledby="tm-tab-india"></div>
     </div>
   </section>
 
@@ -218,9 +196,9 @@
         <div class="press">
           <div class="glass" data-reveal><small>Featured in</small>
             <div class="press__logos">
-              <div><b>businesswire</b><em>A Berkshire Hathaway Company</em></div>
+              <img class="lg-tc" src="img/about/logos/techcrunch-full.svg" alt="TechCrunch">
               <i aria-hidden="true"></i>
-              <img class="lg-tc" src="img/about/logos/techcrunch.svg" alt="TechCrunch">
+              <div><b>businesswire</b><em>A Berkshire Hathaway Company</em></div>
             </div>
           </div>
           <div class="glass" data-reveal><small>Backed by Top VCs and Angels</small>
@@ -302,7 +280,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="about.js?v=1792695731"></script>
-<script src="timeline.js?v=12"></script>
+<script src="about.js?v=1793714424"></script>
+<script src="timeline.js?v=1793701083"></script>
+<script src="quality-flow.js?v=1793714938"></script>
+<script src="about-hero.js?v=1793714704"></script>
 </body>
 </html>
